@@ -1,0 +1,24 @@
+.lkt-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--lkt-icon-gap);
+    padding: var(--lkt-icon-padding);
+    min-width: var(--lkt-icon-min-width);
+    max-width: var(--lkt-icon-max-width);
+    width: var(--lkt-icon-width);
+    min-height: var(--lkt-icon-min-height);
+    max-height: var(--lkt-icon-max-height);
+    height: var(--lkt-icon-height);
+    background: var(--lkt-icon-bg);
+    border-radius: var(--lkt-icon-border-radius);
+    border-width: var(--lkt-icon-border-width);
+    border-style: var(--lkt-icon-border-style);
+    border-color: var(--lkt-icon-border-color);
+    font-size: var(--lkt-icon-font-size);
+    font-weight: var(--lkt-icon-font-weight);
+    color: var(--lkt-icon-color);
+    text-align: var(--lkt-icon-text-align);
+    transition: var(--lkt-icon-transition);
+    margin: var(--lkt-icon-margin);
+}

@@ -1,0 +1,24 @@
+:root {
+    --lkt-icon-gap: 15px;
+    --lkt-icon-font-size: 14px;
+    --lkt-icon-font-weight: 14px;
+    --lkt-icon-text-align: center;
+    --lkt-icon-padding: 15px;
+    --lkt-icon-min-width: initial;
+    --lkt-icon-max-width: initial;
+    --lkt-icon-width: initial;
+    --lkt-icon-min-height: initial;
+    --lkt-icon-max-height: initial;
+    --lkt-icon-height: initial;
+    --lkt-icon-bg: #ffffff;
+    --lkt-icon-bg-hover: #ffffff;
+    --lkt-icon-color: #444444;
+    --lkt-icon-color-hover: #444444;
+    --lkt-icon-border-radius: 1px;
+    --lkt-icon-border-width: 1px;
+    --lkt-icon-border-style: solid;
+    --lkt-icon-border-color: #ffffff;
+    --lkt-icon-border-color-hover: #ffffff;
+    --lkt-icon-transition: all linear 300ms;
+    --lkt-icon-margin: 0;
+}
