@@ -1,7 +1,8 @@
 .lkt-icon {
     display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: var(--lkt-icon-flex-direction);
+    align-items: var(--lkt-icon-align-items);
+    justify-content: var(--lkt-icon-justify-content);
     gap: var(--lkt-icon-gap);
     padding: var(--lkt-icon-padding);
     min-width: var(--lkt-icon-min-width);
@@ -21,4 +22,21 @@
     text-align: var(--lkt-icon-text-align);
     transition: var(--lkt-icon-transition);
     margin: var(--lkt-icon-margin);
+}
+
+.lkt-icon i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--lkt-icon-transition);
+
+    padding: var(--lkt-icon--icon--padding);
+    background: var(--lkt-icon--icon--bg);
+    border-radius: var(--lkt-icon--icon--border-radius);
+    border-width: var(--lkt-icon--icon--border-width);
+    border-style: var(--lkt-icon--icon--border-style);
+    border-color: var(--lkt-icon--icon--border-color);
+    font-size: var(--lkt-icon--icon--font-size);
+    color: var(--lkt-icon--icon--color);
+    margin: var(--lkt-icon--icon--margin);
 }
