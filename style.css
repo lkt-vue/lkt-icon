@@ -1,4 +1,5 @@
 .lkt-icon {
+    appearance: none;
     display: inline-flex;
     flex-direction: var(--lkt-icon-flex-direction);
     align-items: var(--lkt-icon-align-items);
