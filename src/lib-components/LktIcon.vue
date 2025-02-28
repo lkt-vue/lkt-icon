@@ -1,30 +1,20 @@
 <script setup lang="ts">
 import {computed} from "vue";
 import {Settings} from "../settings/Settings";
+import {getDefaultValues, Icon, IconConfig} from "lkt-vue-kernel";
 
 const emit = defineEmits([
     'click',
 ]);
 
-const props = withDefaults(defineProps<{
-    icon?: string,
-    text?: string,
-    class?: string,
-    pack?: string,
-    type?: string,
-}>(), {
-    src: '',
-    text: '',
-    class: '',
-    pack: '',
-    type: '',
-});
+const props = withDefaults(defineProps<IconConfig>(), getDefaultValues(Icon));
 
 const computedClassName = computed(() => {
         if (props.pack && Settings.packs[props.pack]) {
             let pack = Settings.packs[props.pack];
-            if (props.class.indexOf(pack) !== 0) {
-                return `${pack}-${props.class}`;
+            let className = String(props.class);
+            if (className.indexOf(pack) !== 0) {
+                return `${pack}-${className}`;
             }
         }
         return props.class;
@@ -34,8 +24,9 @@ const computedClassName = computed(() => {
         return 'div'
     });
 
-const onClick = () => {
-    emit('click')
+const doClick = ($event: PointerEvent) => {
+    if (typeof props.events?.click === 'function') props.events.click($event);
+    emit('click', $event);
 };
 
 </script>
@@ -45,9 +36,8 @@ const onClick = () => {
         :is="computedComponent"
         class="lkt-icon"
         :class="computedClassName"
-        @click="onClick">
-        <i :class="icon"/>
-
-        <span v-if="text" v-html="text"></span>
+        @click="doClick">
+        <i v-if="icon" :class="icon"/>
+        <span v-if="text" v-html="text"/>
     </component>
 </template>

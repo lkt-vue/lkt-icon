@@ -1,6 +1,6 @@
 {
   "name": "lkt-icon",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "",
   "type": "module",
   "module": "./dist/build.js",
@@ -42,8 +42,8 @@
   },
   "peerDependencies": {
     "lkt-button": "^2.0.6",
-    "lkt-i18n": "^1.0.4",
-    "lkt-vue-kernel": "^1.0.28",
+    "lkt-i18n": "^1.0.6",
+    "lkt-vue-kernel": "^1.0.29",
     "vue": "^3.3.0"
   }
 }
