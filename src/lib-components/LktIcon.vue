@@ -1,5 +1,4 @@
 <script setup lang="ts">
-// Props
 import {computed} from "vue";
 import {Settings} from "../settings/Settings";
 
