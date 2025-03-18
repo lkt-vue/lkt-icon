@@ -1,11 +1,13 @@
 <script setup lang="ts">
-import {computed} from "vue";
+import {computed, useSlots} from "vue";
 import {Settings} from "../settings/Settings";
 import {getDefaultValues, Icon, IconConfig} from "lkt-vue-kernel";
 
 const emit = defineEmits([
     'click',
 ]);
+
+const slots = useSlots();
 
 const props = withDefaults(defineProps<IconConfig>(), getDefaultValues(Icon));
 
@@ -38,6 +40,9 @@ const doClick = ($event: PointerEvent) => {
         :class="computedClassName"
         @click="doClick">
         <i v-if="icon" :class="icon"/>
-        <span v-if="text" v-html="text"/>
+        <template v-if="slots.text">
+            <slot name="text"/>
+        </template>
+        <span v-else-if="text" v-html="text"/>
     </component>
 </template>

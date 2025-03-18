@@ -1,4 +1,4 @@
-import { defineComponent, mergeDefaults, computed, createBlock, openBlock, resolveDynamicComponent, normalizeClass, withCtx, createElementBlock, createCommentVNode } from "vue";
+import { defineComponent, mergeDefaults, useSlots, computed, createBlock, openBlock, resolveDynamicComponent, normalizeClass, withCtx, createElementBlock, createCommentVNode, renderSlot, unref } from "vue";
 import { getDefaultValues, Icon } from "lkt-vue-kernel";
 const _Settings = class _Settings {
 };
@@ -20,6 +20,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
   ],
   setup(__props, { emit: __emit }) {
     const emit = __emit;
+    const slots = useSlots();
     const props = __props;
     const computedClassName = computed(() => {
       if (props.pack && Settings.packs[props.pack]) {
@@ -49,12 +50,12 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
             key: 0,
             class: normalizeClass(_ctx.icon)
           }, null, 2)) : createCommentVNode("", true),
-          _ctx.text ? (openBlock(), createElementBlock("span", {
-            key: 1,
+          unref(slots).text ? renderSlot(_ctx.$slots, "text", { key: 1 }) : _ctx.text ? (openBlock(), createElementBlock("span", {
+            key: 2,
             innerHTML: _ctx.text
           }, null, 8, _hoisted_1)) : createCommentVNode("", true)
         ]),
-        _: 1
+        _: 3
       }, 8, ["class"]);
     };
   }

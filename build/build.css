@@ -40,4 +40,6 @@
     font-size: var(--lkt-icon--icon--font-size);
     color: var(--lkt-icon--icon--color);
     margin: var(--lkt-icon--icon--margin);
+    width: var(--lkt-icon--icon--width);
+    height: var(--lkt-icon--icon--height);
 }
