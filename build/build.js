@@ -11,8 +11,8 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     icon: {},
     text: {},
     class: {},
-    pack: {},
     type: {},
+    position: {},
     events: {}
   }, getDefaultValues(Icon)),
   emits: [

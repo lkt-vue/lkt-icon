@@ -1,6 +1,6 @@
 .lkt-icon {
     appearance: none;
-    display: inline-flex;
+    display: var(--lkt-icon-display);
     flex-direction: var(--lkt-icon-flex-direction);
     align-items: var(--lkt-icon-align-items);
     justify-content: var(--lkt-icon-justify-content);
@@ -26,9 +26,9 @@
 }
 
 .lkt-icon i {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    display: var(--lkt-icon--icon--display);
+    align-items: var(--lkt-icon--icon--align-items);
+    justify-content: var(--lkt-icon--icon--justify-content);
     transition: var(--lkt-icon-transition);
 
     padding: var(--lkt-icon--icon--padding);

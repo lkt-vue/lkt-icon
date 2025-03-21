@@ -1,4 +1,4 @@
-:root {
+.lkt-icon {
     --lkt-icon-gap: 15px;
     --lkt-icon-font-size: 14px;
     --lkt-icon-font-weight: 400;
@@ -21,10 +21,14 @@
     --lkt-icon-border-color-hover: transparent;
     --lkt-icon-transition: all linear 300ms;
     --lkt-icon-margin: 0;
+    --lkt-icon-display: inline-flex;
     --lkt-icon-align-items: center;
     --lkt-icon-justify-content: center;
     --lkt-icon-flex-direction: column;
 
+    --lkt-icon--icon--display: inline-flex;
+    --lkt-icon--icon--align-items: center;
+    --lkt-icon--icon--justify-content: center;
     --lkt-icon--icon--padding: 0;
     --lkt-icon--icon--bg: transparent;
     --lkt-icon--icon--border-radius: 0;
