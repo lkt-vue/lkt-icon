@@ -1,38 +1,38 @@
 .lkt-icon {
     appearance: none;
-    display: var(--lkt-icon-display);
-    flex-direction: var(--lkt-icon-flex-direction);
-    align-items: var(--lkt-icon-align-items);
-    justify-content: var(--lkt-icon-justify-content);
-    gap: var(--lkt-icon-gap);
-    padding: var(--lkt-icon-padding);
-    min-width: var(--lkt-icon-min-width);
-    max-width: var(--lkt-icon-max-width);
-    width: var(--lkt-icon-width);
-    min-height: var(--lkt-icon-min-height);
-    max-height: var(--lkt-icon-max-height);
-    height: var(--lkt-icon-height);
-    background: var(--lkt-icon-bg);
-    border-radius: var(--lkt-icon-border-radius);
-    border-width: var(--lkt-icon-border-width);
-    border-style: var(--lkt-icon-border-style);
-    border-color: var(--lkt-icon-border-color);
-    font-size: var(--lkt-icon-font-size);
-    font-weight: var(--lkt-icon-font-weight);
-    color: var(--lkt-icon-color);
-    text-align: var(--lkt-icon-text-align);
-    transition: var(--lkt-icon-transition);
-    margin: var(--lkt-icon-margin);
+    display: var(--lkt-icon--display);
+    flex-direction: var(--lkt-icon--flex-direction);
+    align-items: var(--lkt-icon--align-items);
+    justify-content: var(--lkt-icon--justify-content);
+    gap: var(--lkt-icon--gap);
+    padding: var(--lkt-icon--padding);
+    min-width: var(--lkt-icon--min-width);
+    max-width: var(--lkt-icon--max-width);
+    width: var(--lkt-icon--width);
+    min-height: var(--lkt-icon--min-height);
+    max-height: var(--lkt-icon--max-height);
+    height: var(--lkt-icon--height);
+    background: var(--lkt-icon--background);
+    border-radius: var(--lkt-icon--border-radius);
+    border-width: var(--lkt-icon--border-width);
+    border-style: var(--lkt-icon--border-style);
+    border-color: var(--lkt-icon--border-color);
+    font-size: var(--lkt-icon--font-size);
+    font-weight: var(--lkt-icon--font-weight);
+    color: var(--lkt-icon--color);
+    text-align: var(--lkt-icon--text-align);
+    transition: var(--lkt-icon--transition);
+    margin: var(--lkt-icon--margin);
 }
 
 .lkt-icon i {
     display: var(--lkt-icon--icon--display);
     align-items: var(--lkt-icon--icon--align-items);
     justify-content: var(--lkt-icon--icon--justify-content);
-    transition: var(--lkt-icon-transition);
+    transition: var(--lkt-icon--transition);
 
     padding: var(--lkt-icon--icon--padding);
-    background: var(--lkt-icon--icon--bg);
+    background: var(--lkt-icon--icon--background);
     border-radius: var(--lkt-icon--icon--border-radius);
     border-width: var(--lkt-icon--icon--border-width);
     border-style: var(--lkt-icon--icon--border-style);
@@ -42,4 +42,16 @@
     margin: var(--lkt-icon--icon--margin);
     width: var(--lkt-icon--icon--width);
     height: var(--lkt-icon--icon--height);
+}
+
+.lkt-icon:hover {
+    background: var(--lkt-icon--hover--background);
+    color: var(--lkt-icon--hover--color);
+    border-color: var(--lkt-icon--hover--border-color);
+}
+
+.lkt-icon:hover i {
+    background: var(--lkt-icon--hover--icon--background);
+    color: var(--lkt-icon--hover--icon--color);
+    border-color: var(--lkt-icon--hover--icon--border-color);
 }

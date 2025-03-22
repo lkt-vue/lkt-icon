@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import {computed, useSlots} from "vue";
-import {Settings} from "../settings/Settings";
 import {getDefaultValues, Icon, IconConfig} from "lkt-vue-kernel";
 
 const emit = defineEmits([
@@ -12,13 +11,6 @@ const slots = useSlots();
 const props = withDefaults(defineProps<IconConfig>(), getDefaultValues(Icon));
 
 const computedClassName = computed(() => {
-        if (props.pack && Settings.packs[props.pack]) {
-            let pack = Settings.packs[props.pack];
-            let className = String(props.class);
-            if (className.indexOf(pack) !== 0) {
-                return `${pack}-${className}`;
-            }
-        }
         return props.class;
     }),
     computedComponent = computed(() => {

@@ -1,7 +1,6 @@
 import {App, Plugin} from "vue";
 import "../style.css";
 import {default as libComponent} from "./lib-components/LktIcon.vue";
-import {Settings} from "./settings/Settings";
 
 
 const LktIcon: Plugin = {
@@ -11,7 +10,3 @@ const LktIcon: Plugin = {
 };
 
 export default LktIcon;
-
-export const setIconPack = (name: string, className: string) => {
-    Settings.packs[name] = className;
-}

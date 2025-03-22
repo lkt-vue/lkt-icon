@@ -1,9 +1,5 @@
 import { defineComponent, mergeDefaults, useSlots, computed, createBlock, openBlock, resolveDynamicComponent, normalizeClass, withCtx, createElementBlock, createCommentVNode, renderSlot, unref } from "vue";
 import { getDefaultValues, Icon } from "lkt-vue-kernel";
-const _Settings = class _Settings {
-};
-_Settings.packs = {};
-let Settings = _Settings;
 const _hoisted_1 = ["innerHTML"];
 const _sfc_main = /* @__PURE__ */ defineComponent({
   __name: "LktIcon",
@@ -23,13 +19,6 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     const slots = useSlots();
     const props = __props;
     const computedClassName = computed(() => {
-      if (props.pack && Settings.packs[props.pack]) {
-        let pack = Settings.packs[props.pack];
-        let className = String(props.class);
-        if (className.indexOf(pack) !== 0) {
-          return `${pack}-${className}`;
-        }
-      }
       return props.class;
     }), computedComponent = computed(() => {
       if (props.type === "button") return "button";
@@ -65,10 +54,6 @@ const LktIcon = {
     if (app.component("lkt-icon") === void 0) app.component("lkt-icon", _sfc_main);
   }
 };
-const setIconPack = (name, className) => {
-  Settings.packs[name] = className;
-};
 export {
-  LktIcon as default,
-  setIconPack
+  LktIcon as default
 };
