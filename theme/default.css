@@ -1,49 +1,51 @@
 .lkt-icon {
-    --lkt-icon--gap: 15px;
+    --lkt-icon--align-items: center;
+    --lkt-icon--background: transparent;
+    --lkt-icon--border-color: transparent;
+    --lkt-icon--border-radius: 0;
+    --lkt-icon--border-style: solid;
+    --lkt-icon--border-width: 0;
+    --lkt-icon--color: #444444;
+    --lkt-icon--display: inline-flex;
+    --lkt-icon--flex-direction: column;
     --lkt-icon--font-size: 14px;
     --lkt-icon--font-weight: 400;
-    --lkt-icon--text-align: center;
-    --lkt-icon--padding: 0;
-    --lkt-icon--min-width: initial;
-    --lkt-icon--max-width: initial;
-    --lkt-icon--width: initial;
-    --lkt-icon--min-height: initial;
-    --lkt-icon--max-height: initial;
+    --lkt-icon--gap: 15px;
     --lkt-icon--height: initial;
-    --lkt-icon--background: transparent;
-    --lkt-icon--color: #444444;
-    --lkt-icon--border-radius: 0;
-    --lkt-icon--border-width: 0;
-    --lkt-icon--border-style: solid;
-    --lkt-icon--border-color: transparent;
-    --lkt-icon--transition: all linear 300ms;
-    --lkt-icon--margin: 0;
-    --lkt-icon--display: inline-flex;
-    --lkt-icon--align-items: center;
     --lkt-icon--justify-content: center;
-    --lkt-icon--flex-direction: column;
+    --lkt-icon--margin: 0;
+    --lkt-icon--max-height: initial;
+    --lkt-icon--max-width: initial;
+    --lkt-icon--min-height: initial;
+    --lkt-icon--min-width: initial;
+    --lkt-icon--padding: 0;
+    --lkt-icon--text-align: center;
+    --lkt-icon--transition: all linear 300ms;
+    --lkt-icon--width: initial;
 
-    --lkt-icon--icon--display: inline-flex;
+    /** Element: Icon */
     --lkt-icon--icon--align-items: center;
-    --lkt-icon--icon--justify-content: center;
-    --lkt-icon--icon--padding: 0;
     --lkt-icon--icon--background: transparent;
-    --lkt-icon--icon--border-radius: 0;
-    --lkt-icon--icon--border-width: 0;
-    --lkt-icon--icon--border-style: solid;
     --lkt-icon--icon--border-color: transparent;
-    --lkt-icon--icon--font-size: 30px;
+    --lkt-icon--icon--border-radius: 0;
+    --lkt-icon--icon--border-style: solid;
+    --lkt-icon--icon--border-width: 0;
     --lkt-icon--icon--color: #444444;
-    --lkt-icon--icon--margin: 0;
-    --lkt-icon--icon--width: auto;
+    --lkt-icon--icon--display: inline-flex;
+    --lkt-icon--icon--font-size: 30px;
     --lkt-icon--icon--height: auto;
+    --lkt-icon--icon--justify-content: center;
+    --lkt-icon--icon--margin: 0;
+    --lkt-icon--icon--padding: 0;
+    --lkt-icon--icon--width: auto;
 
     /** Event: Hover */
     --lkt-icon--hover--background: var(--lkt-icon--background);
-    --lkt-icon--hover--color: var(--lkt-icon--color);
     --lkt-icon--hover--border-color: var(--lkt-icon--border-color);
+    --lkt-icon--hover--color: var(--lkt-icon--color);
 
+    /** Element: Icon, Event: Hover */
     --lkt-icon--hover--icon--background: var(--lkt-icon--icon--background);
-    --lkt-icon--hover--icon--color: var(--lkt-icon--icon--color);
     --lkt-icon--hover--icon--border-color: var(--lkt-icon--icon--border-color);
+    --lkt-icon--hover--icon--color: var(--lkt-icon--icon--color);
 }
