@@ -42,7 +42,8 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
           unref(slots).text ? renderSlot(_ctx.$slots, "text", { key: 1 }) : _ctx.text ? (openBlock(), createElementBlock("span", {
             key: 2,
             innerHTML: _ctx.text
-          }, null, 8, _hoisted_1)) : createCommentVNode("", true)
+          }, null, 8, _hoisted_1)) : createCommentVNode("", true),
+          unref(slots)["web-element-actions"] ? renderSlot(_ctx.$slots, "web-element-actions", { key: 3 }) : createCommentVNode("", true)
         ]),
         _: 3
       }, 8, ["class"]);

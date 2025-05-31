@@ -5,9 +5,11 @@ declare const slots: Readonly<{
 declare const computedClassName: import("vue").ComputedRef<string | number>, computedComponent: import("vue").ComputedRef<"button" | "div">;
 declare const doClick: ($event: PointerEvent) => void;
 declare const __VLS_ctx: InstanceType<__VLS_PickNotAny<typeof __VLS_self, new () => {}>>;
-declare var __VLS_10: {};
+declare var __VLS_10: {}, __VLS_12: {};
 type __VLS_Slots = __VLS_PrettifyGlobal<__VLS_OmitStringIndex<typeof __VLS_ctx.$slots> & {
     text?: (props: typeof __VLS_10) => any;
+} & {
+    'web-element-actions'?: (props: typeof __VLS_12) => any;
 }>;
 declare const __VLS_self: import("vue").DefineComponent<IconConfig, {
     slots: typeof slots;

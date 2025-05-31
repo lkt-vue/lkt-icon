@@ -36,5 +36,9 @@ const doClick = ($event: PointerEvent) => {
             <slot name="text"/>
         </template>
         <span v-else-if="text" v-html="text"/>
+
+        <template v-if="slots['web-element-actions']">
+            <slot name="web-element-actions"/>
+        </template>
     </component>
 </template>
