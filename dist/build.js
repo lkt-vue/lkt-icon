@@ -1,13 +1,19 @@
-import { defineComponent, mergeDefaults, useSlots, computed, createBlock, openBlock, resolveDynamicComponent, normalizeClass, withCtx, createElementBlock, createCommentVNode, renderSlot, unref } from "vue";
+import { defineComponent, mergeDefaults, useSlots, computed, createBlock, openBlock, resolveDynamicComponent, normalizeClass, withCtx, createElementBlock, createCommentVNode, renderSlot, toDisplayString, unref } from "vue";
 import { getDefaultValues, Icon } from "lkt-vue-kernel";
-const _hoisted_1 = ["innerHTML"];
+const _hoisted_1 = {
+  key: 1,
+  class: "lkt-icon--dot"
+};
+const _hoisted_2 = ["innerHTML"];
 const _sfc_main = /* @__PURE__ */ defineComponent({
   __name: "LktIcon",
   props: /* @__PURE__ */ mergeDefaults({
-    icon: {},
+    icon: { type: [String, Number, Function] },
+    iconText: { type: [String, Number, Function] },
     text: {},
     class: {},
     type: {},
+    dot: { type: [Boolean, String, Number] },
     position: {},
     events: {}
   }, getDefaultValues(Icon)),
@@ -19,10 +25,24 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     const slots = useSlots();
     const props = __props;
     const computedClassName = computed(() => {
-      return props.class;
+      let r = [];
+      if (props.class) r.push(props.class);
+      if (computedIcon.value) r.push("has-icon");
+      if (computedIconText.value) r.push("has-icon-text");
+      if (props.dot) r.push("has-dot");
+      if (typeof props.dot === "string" && props.dot !== "") r.push("has-dot-text");
+      return r.join(" ");
     }), computedComponent = computed(() => {
       if (props.type === "button") return "button";
       return "div";
+    }), computedIcon = computed(() => {
+      if (typeof props.icon === "function") return props.icon();
+      return props.icon;
+    }), computedIconDotText = computed(() => {
+      if (typeof props.dot === "boolean") return "";
+      return props.dot;
+    }), computedIconText = computed(() => {
+      return props.iconText;
     });
     const doClick = ($event) => {
       var _a;
@@ -35,15 +55,16 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
         onClick: doClick
       }, {
         default: withCtx(() => [
-          _ctx.icon ? (openBlock(), createElementBlock("i", {
+          computedIcon.value || computedIconText.value ? (openBlock(), createElementBlock("i", {
             key: 0,
-            class: normalizeClass(_ctx.icon)
-          }, null, 2)) : createCommentVNode("", true),
-          unref(slots).text ? renderSlot(_ctx.$slots, "text", { key: 1 }) : _ctx.text ? (openBlock(), createElementBlock("span", {
-            key: 2,
+            class: normalizeClass([computedIcon.value, "lkt-icon--main"])
+          }, toDisplayString(computedIconText.value), 3)) : createCommentVNode("", true),
+          (computedIcon.value || computedIconText.value) && _ctx.dot ? (openBlock(), createElementBlock("i", _hoisted_1, toDisplayString(computedIconDotText.value), 1)) : createCommentVNode("", true),
+          unref(slots).text ? renderSlot(_ctx.$slots, "text", { key: 2 }) : _ctx.text ? (openBlock(), createElementBlock("span", {
+            key: 3,
             innerHTML: _ctx.text
-          }, null, 8, _hoisted_1)) : createCommentVNode("", true),
-          unref(slots)["web-element-actions"] ? renderSlot(_ctx.$slots, "web-element-actions", { key: 3 }) : createCommentVNode("", true)
+          }, null, 8, _hoisted_2)) : createCommentVNode("", true),
+          unref(slots)["web-element-actions"] ? renderSlot(_ctx.$slots, "web-element-actions", { key: 4 }) : createCommentVNode("", true)
         ]),
         _: 3
       }, 8, ["class"]);

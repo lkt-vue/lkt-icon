@@ -33,6 +33,7 @@
     --lkt-icon--icon--color: #444444;
     --lkt-icon--icon--display: inline-flex;
     --lkt-icon--icon--font-size: 30px;
+    --lkt-icon--icon--font-style: normal;
     --lkt-icon--icon--height: auto;
     --lkt-icon--icon--justify-content: center;
     --lkt-icon--icon--margin: 0;
@@ -48,4 +49,19 @@
     --lkt-icon--hover--icon--background: var(--lkt-icon--icon--background);
     --lkt-icon--hover--icon--border-color: var(--lkt-icon--icon--border-color);
     --lkt-icon--hover--icon--color: var(--lkt-icon--icon--color);
+
+    /** Element: Icon dot */
+    --lkt-icon--dot--background: red;
+    --lkt-icon--dot--border-radius: 100%;
+    --lkt-icon--dot--color: #ffffff;
+    --lkt-icon--dot--display: block;
+    --lkt-icon--dot--font-size: 12px;
+    --lkt-icon--dot--font-style: normal;
+    --lkt-icon--dot--height: 16px;
+    --lkt-icon--dot--line-height: var(--lkt-icon--dot--height);
+    --lkt-icon--dot--position: absolute;
+    --lkt-icon--dot--right: -5px;
+    --lkt-icon--dot--top: -5px;
+    --lkt-icon--dot--text-align: center;
+    --lkt-icon--dot--width: 16px;
 }

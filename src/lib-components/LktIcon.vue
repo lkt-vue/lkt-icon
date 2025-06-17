@@ -11,11 +11,29 @@ const slots = useSlots();
 const props = withDefaults(defineProps<IconConfig>(), getDefaultValues(Icon));
 
 const computedClassName = computed(() => {
-        return props.class;
+        let r = [];
+        if (props.class) r.push(props.class);
+        if (computedIcon.value) r.push('has-icon');
+        if (computedIconText.value) r.push('has-icon-text');
+        if (props.dot) r.push('has-dot');
+        if (typeof props.dot === 'string' && props.dot !== '') r.push('has-dot-text');
+
+        return r.join(' ');
     }),
     computedComponent = computed(() => {
         if (props.type === 'button') return 'button';
         return 'div'
+    }),
+    computedIcon = computed(() => {
+        if (typeof props.icon === 'function') return props.icon();
+        return props.icon;
+    }),
+    computedIconDotText = computed(() => {
+        if (typeof props.dot === 'boolean') return '';
+        return props.dot;
+    }),
+    computedIconText = computed(() => {
+        return props.iconText;
     });
 
 const doClick = ($event: PointerEvent) => {
@@ -31,7 +49,8 @@ const doClick = ($event: PointerEvent) => {
         class="lkt-icon"
         :class="computedClassName"
         @click="doClick">
-        <i v-if="icon" :class="icon"/>
+        <i v-if="computedIcon || computedIconText" :class="computedIcon" class="lkt-icon--main">{{computedIconText}}</i>
+        <i v-if="(computedIcon || computedIconText) && dot" class="lkt-icon--dot">{{ computedIconDotText }}</i>
         <template v-if="slots.text">
             <slot name="text"/>
         </template>
