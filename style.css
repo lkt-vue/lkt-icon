@@ -19,6 +19,8 @@
     border-color: var(--lkt-icon--border-color);
     font-size: var(--lkt-icon--font-size);
     font-weight: var(--lkt-icon--font-weight);
+    letter-spacing: var(--lkt-icon--letter-spacing);
+    line-height: var(--lkt-icon--line-height);
     color: var(--lkt-icon--color);
     text-align: var(--lkt-icon--text-align);
     transition: var(--lkt-icon--transition);
