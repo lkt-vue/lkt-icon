@@ -75,3 +75,17 @@
     border-radius: var(--lkt-icon--dot--border-radius, 100%);
     font-style: var(--lkt-icon--dot--font-style, normal);
 }
+
+.lkt-icon.swap-icon-and-dot .lkt-icon--main {
+    position: var(--lkt-icon--dot--position, absolute);
+    right: var(--lkt-icon--dot--right);
+    top: var(--lkt-icon--dot--top);
+    font-size: var(--lkt-icon--dot--font-size);
+}
+
+.lkt-icon.swap-icon-and-dot .lkt-icon--dot {
+    position: static;
+    right: initial;
+    top: initial;
+    font-size: var(--lkt-icon--icon--font-size);
+}

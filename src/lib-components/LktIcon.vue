@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {computed, useSlots} from "vue";
-import {getDefaultValues, Icon, IconConfig} from "lkt-vue-kernel";
+import {getDefaultValues, Icon, IconConfig, IconVisualType} from "lkt-vue-kernel";
 
 const emit = defineEmits([
     'click',
@@ -17,6 +17,7 @@ const computedClassName = computed(() => {
         if (computedIconText.value) r.push('has-icon-text');
         if (props.dot) r.push('has-dot');
         if (typeof props.dot === 'string' && props.dot !== '') r.push('has-dot-text');
+        if (props.visualType === IconVisualType.SwapIconAndDot) r.push('swap-icon-and-dot');
 
         return r.join(' ');
     }),
@@ -50,7 +51,7 @@ const doClick = ($event: PointerEvent) => {
         :class="computedClassName"
         @click="doClick">
         <i v-if="computedIcon || computedIconText" :class="computedIcon" class="lkt-icon--main">{{computedIconText}}</i>
-        <i v-if="(computedIcon || computedIconText) && dot" class="lkt-icon--dot">{{ computedIconDotText }}</i>
+        <i v-if="(computedIcon || computedIconText || visualType === IconVisualType.SwapIconAndDot) && dot" class="lkt-icon--dot">{{ computedIconDotText }}</i>
         <template v-if="slots.text">
             <slot name="text"/>
         </template>

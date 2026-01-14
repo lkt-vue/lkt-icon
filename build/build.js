@@ -1,5 +1,5 @@
 import { defineComponent, mergeDefaults, useSlots, computed, createBlock, openBlock, resolveDynamicComponent, normalizeClass, withCtx, createElementBlock, createCommentVNode, renderSlot, toDisplayString, unref } from "vue";
-import { getDefaultValues, Icon } from "lkt-vue-kernel";
+import { IconVisualType, getDefaultValues, Icon } from "lkt-vue-kernel";
 const _hoisted_1 = {
   key: 1,
   class: "lkt-icon--dot"
@@ -13,6 +13,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     text: {},
     class: {},
     type: {},
+    visualType: {},
     dot: { type: [Boolean, String, Number] },
     position: {},
     events: {}
@@ -31,6 +32,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       if (computedIconText.value) r.push("has-icon-text");
       if (props.dot) r.push("has-dot");
       if (typeof props.dot === "string" && props.dot !== "") r.push("has-dot-text");
+      if (props.visualType === IconVisualType.SwapIconAndDot) r.push("swap-icon-and-dot");
       return r.join(" ");
     }), computedComponent = computed(() => {
       if (props.type === "button") return "button";
@@ -59,10 +61,10 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
             key: 0,
             class: normalizeClass([computedIcon.value, "lkt-icon--main"])
           }, toDisplayString(computedIconText.value), 3)) : createCommentVNode("", true),
-          (computedIcon.value || computedIconText.value) && _ctx.dot ? (openBlock(), createElementBlock("i", _hoisted_1, toDisplayString(computedIconDotText.value), 1)) : createCommentVNode("", true),
-          unref(slots).text ? renderSlot(_ctx.$slots, "text", { key: 2 }) : _ctx.text ? (openBlock(), createElementBlock("span", {
+          (computedIcon.value || computedIconText.value || __props.visualType === unref(IconVisualType).SwapIconAndDot) && __props.dot ? (openBlock(), createElementBlock("i", _hoisted_1, toDisplayString(computedIconDotText.value), 1)) : createCommentVNode("", true),
+          unref(slots).text ? renderSlot(_ctx.$slots, "text", { key: 2 }) : __props.text ? (openBlock(), createElementBlock("span", {
             key: 3,
-            innerHTML: _ctx.text
+            innerHTML: __props.text
           }, null, 8, _hoisted_2)) : createCommentVNode("", true),
           unref(slots)["web-element-actions"] ? renderSlot(_ctx.$slots, "web-element-actions", { key: 4 }) : createCommentVNode("", true)
         ]),
